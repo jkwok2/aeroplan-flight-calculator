@@ -43,7 +43,6 @@ const totalDistance = (distances) => {
     return result;
 }
 
-
 const distInArray = (cityArr) => {
     for (let i = 0; i < cityArr.length - 1; i++) {
         distances.push(calculateDistance(airportData[cityArr[i]].long, airportData[cityArr[i]].lat, airportData[cityArr[i+1]].long, airportData[cityArr[i+1]].lat));       
