@@ -5,7 +5,7 @@ class InputTextField extends React.Component {
 
         constructor(props) {
           super(props);
-          this.state = {value: 'coconut'};
+          this.state = {value: 'YVR-YYZ-LHR'};
           this.handleChange = this.handleChange.bind(this);
           this.handleSubmit = this.handleSubmit.bind(this);
         }
@@ -13,7 +13,7 @@ class InputTextField extends React.Component {
         // code to signal there is an issue with the input
         handleChange(event) {    this.setState({value: event.target.value});  }
         handleSubmit(event) {
-          const value = calculator(this.state.value)
+          let value = calculator(this.state.value)
           console.log(value)
           alert('Sad. Those are valid airports! Please re-enter airports');
           event.preventDefault();

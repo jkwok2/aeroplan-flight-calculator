@@ -26,12 +26,11 @@ const SASA = require('./resources/awardchartSASA.json');
 //     return "test"
 // }
 
-export default function calculator(inputString, cos) {
-    console.log(inputString)
+export default function calculator(inputString) {
+    let cos = "j"
     let cityArr = [];
     let distances = [];
-    let originZone; 
-    let destZone;
+    let retVal = [];
 
     // [YVR, YYZ, ZRH]
     const splitString = (inputString) => {
@@ -42,6 +41,7 @@ export default function calculator(inputString, cos) {
         for (let i = 0; i < cityArr.length - 1; i++) {
             distances.push(calculateDistance(airportData[cityArr[i]].long, airportData[cityArr[i]].lat, airportData[cityArr[i+1]].long, airportData[cityArr[i+1]].lat));       
         }
+        return distances
     }
 
     // Use Haversine Function to calculate distance
@@ -276,7 +276,16 @@ export default function calculator(inputString, cos) {
                 }
         }
     }
-    return 10;
+
+    splitString(inputString)
+    distInArray(cityArr)
+    var distance = totalDistance(distances)
+    var zone = calcZone(cityArr)
+    var band = distToBand(zone, distance)
+    var priceForItin = totalPrice(zone, band, cos)
+    retVal[0] = priceForItin
+    retVal[1] = distance
+    return retVal;
 }
 
 // yvr-yyz-zrh
