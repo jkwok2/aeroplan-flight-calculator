@@ -11,18 +11,27 @@ const PAPA = require('./resources/awardchartPAPA.json');
 const PASA = require('./resources/awardchartPASA.json');
 const SASA = require('./resources/awardchartSASA.json');
 
-let inputString = "YVR-YYZ-ZRH"; // from form;
-let cos = "j" // from form
-let cityArr = [];
-let distances = [];
-let originZone; 
-let destZone;
+class Calculator {
+    constructor (inputString, cos) {
+        this.inputString = inputString
+        this.cos = cos
+        this.cityArr = []
+        this.distances = []
+        this.originZone;
+        this.destZone;
+
+    }
+// let inputString = "YVR-YYZ-ZRH"; // from form;
+// let cos = "j" // from form
+// let cityArr = [];
+// let distances = [];
+// let originZone; 
+// let destZone;
+}
 
 const splitString = (inputString) => {
     cityArr = inputString.split("-");
 }
-
-splitString(inputString)
 
 // Use Haversine Function to calculate distance
 const calculateDistance = (origLong, origLat, destLong, destLat) => {
@@ -60,8 +69,6 @@ const distInArray = (cityArr) => {
         distances.push(calculateDistance(airportData[cityArr[i]].long, airportData[cityArr[i]].lat, airportData[cityArr[i+1]].long, airportData[cityArr[i+1]].lat));       
     }
 }
-
-distInArray(cityArr);
 
 const calcRegion = (country) => {
     if (countries[country] === "North America") {
@@ -180,7 +187,6 @@ const distToBand = (zone, dist) => {
     }
 }
 
-
 const totalPrice = (zone, band, cos) => {
     switch (zone) {
         case "ATAT":
@@ -273,7 +279,11 @@ const totalPrice = (zone, band, cos) => {
 // NAAT
 // "band2"
 
-console.log(cityArr)
+let testinputString = "YVR-YYZ-ZRH";
+let testCityArr = []
+splitString(testinputString)
+distInArray(testCityArr);
+console.log(testcityArr)
 console.log(distances)
 var testtotalDist = totalDistance(distances)
 console.log(testtotalDist)
