@@ -1,15 +1,15 @@
-const airportData = require('./resources/airports.json');
-const countries = require('./resources/countries.json');
-const ATAT = require('./resources/awardchartATAT.json');
-const ATPA = require('./resources/awardchartATPA.json');
-const ATSA = require('./resources/awardchartATSA.json');
-const NAAT = require('./resources/awardchartNAAT.json');
-const NANA = require('./resources/awardchartNANA.json');
-const NAPA = require('./resources/awardchartNAPA.json');
-const NASA = require('./resources/awardchartNASA.json');
-const PAPA = require('./resources/awardchartPAPA.json');
-const PASA = require('./resources/awardchartPASA.json');
-const SASA = require('./resources/awardchartSASA.json');
+const airportData = require('../resources/airports.json');
+const countries = require('../resources/countries.json');
+const ATAT = require('../resources/awardchartATAT.json');
+const ATPA = require('../resources/awardchartATPA.json');
+const ATSA = require('../resources/awardchartATSA.json');
+const NAAT = require('../resources/awardchartNAAT.json');
+const NANA = require('../resources/awardchartNANA.json');
+const NAPA = require('../resources/awardchartNAPA.json');
+const NASA = require('../resources/awardchartNASA.json');
+const PAPA = require('../resources/awardchartPAPA.json');
+const PASA = require('../resources/awardchartPASA.json');
+const SASA = require('../resources/awardchartSASA.json');
 
 class Calculator {
     constructor (inputString, cos) {

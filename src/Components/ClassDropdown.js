@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Calculator from './Calculator'
 
 class ClassDropdown extends Component {
   
@@ -13,9 +14,9 @@ class ClassDropdown extends Component {
             <label>
               Flight Class  
               <select>          
-                <option value="lime">Economy</option>
-                <option value="coconut">Business</option>
-                <option value="mango">First</option>
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First</option>
               </select>
             </label>
             <input type="submit" value="Submit" />
