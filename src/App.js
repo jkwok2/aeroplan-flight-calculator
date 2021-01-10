@@ -1,6 +1,7 @@
 import earth from './earth.webp';
 import './App.css';
 import CostDisplay from './Components/CostDisplay'
+import InputTextField from './Components/InputTextField'
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         
       </header>
       <p>Accurately check the total points necessary to travel to your dream location</p>
-      <CostDisplay></CostDisplay>
+
+      <InputTextField></InputTextField>
     </div>
 
   );
