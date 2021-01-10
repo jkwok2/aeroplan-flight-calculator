@@ -34,7 +34,12 @@
 .grid-table {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
+}
+
+.grid-image {
+  justify-self: center;
+  padding: 4%;
 }
 
 @keyframes App-logo-spin {

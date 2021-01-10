@@ -26,7 +26,7 @@ class InputTextField extends React.Component {
             rows="5" cols="30"
             placeholder="Enter airports here in the following format: YVR-FRA-LAX"></textarea>
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Calculate" />
           </form>
 
           );
