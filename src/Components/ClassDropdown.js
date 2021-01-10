@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Calculator from './Calculator'
+
 
 class ClassDropdown extends Component {
   
