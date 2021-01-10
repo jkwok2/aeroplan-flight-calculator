@@ -28,7 +28,7 @@ function App() {
         <p>Accurately check the total points necessary to travel to your dream location</p>
         </div>
 
-        <div>
+        <div class="grid-table">
           <ResetButton></ResetButton>
           </div>
 
