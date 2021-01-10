@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+// import React, {Component} from 'react'
 
-class ResetButton extends Component {
+// class ResetButton extends Component {
   
 
-    render(){
-        return (  // every component needs a render
+//     render(){
+//         return (  // every component needs a render
            
-        )
-    }
-}
+//         );
+//     }
+// }
 
-export default ResetButton;
+// export default ResetButton;

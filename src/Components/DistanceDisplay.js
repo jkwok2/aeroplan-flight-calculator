@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+// import React, {Component} from 'react'
 
-class DistanceDisplay extends Component {
+// class DistanceDisplay extends Component {
   
 
-    render(){
-        return (  // every component needs a render
+//     render(){
+//         return (  // every component needs a render
            
-        )
-    }
-}
+//         )
+//     }
+// }
 
-export default DistanceDisplay;
+// export default DistanceDisplay;

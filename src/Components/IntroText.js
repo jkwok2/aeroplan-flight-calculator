@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+// import React, {Component} from 'react'
 
-class IntroText extends Component {
+// class IntroText extends Component {
   
 
-    render(){
-        return (  // every component needs a render
+//     render(){
+//         return (  // every component needs a render
            
-        )
-    }
-}
+//         )
+//     }
+// }
 
-export default IntroText;
+// export default IntroText;

@@ -5,11 +5,8 @@ class CostDisplay extends Component {
   
 
     render(){
-        return (  // every component needs a render
-           
+        return (  // every component needs a render     
             <TextField id="outlined-basic" label="Trip Cost" variant="outlined" />
-           
-  
         )
     }
 }

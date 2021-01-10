@@ -2,6 +2,9 @@ import earth from './earth.webp';
 import './App.css';
 import CostDisplay from './Components/CostDisplay'
 
+
+
+
 function App() {
   return (
     <div className="App">
