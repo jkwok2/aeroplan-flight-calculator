@@ -10,9 +10,6 @@ import Map from './Components/Map';
 
 function App() {
 
-  
-
-
   return (
   
     <div className="App">
@@ -37,7 +34,7 @@ function App() {
             </div>
 
             <div class="grid-adjusted">
-            <CostDisplay></CostDisplay>
+              <CostDisplay></CostDisplay>
             </div>
 
              <div class="grid-adjusted">

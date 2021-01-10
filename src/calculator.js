@@ -283,8 +283,8 @@ export default function calculator(inputString) {
     var zone = calcZone(cityArr)
     var band = distToBand(zone, distance)
     var priceForItin = totalPrice(zone, band, cos)
-    retVal[0] = priceForItin
-    retVal[1] = distance
+    retVal[0] = "Total Price: " + priceForItin
+    retVal[1] = "Total Distance: " + distance
     return retVal;
 }
 

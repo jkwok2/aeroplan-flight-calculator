@@ -13,8 +13,9 @@ class InputTextField extends React.Component {
         // code to signal there is an issue with the input
         handleChange(event) {    this.setState({value: event.target.value});  }
         handleSubmit(event) {
-          let value = calculator(this.state.value)
-          console.log(value)
+          const value = calculator(this.state.value)
+          this.state = value
+          console.log(this.state)
           alert('Sad. Those are valid airports! Please re-enter airports');
           event.preventDefault();
         }
