@@ -11,34 +11,27 @@ class CostDisplay extends Component {
         this.publish = this.publish.bind(this);
         this.handleChange = this.handleChange.bind(this);
       }
-      
-      handleChange({ target }) {
+    
+
+      handleChange = event => {
+        const value = event.target.value;
         this.setState({
-          [target.name]: target.value
+          input: calc.totalPrice()
         });
-      }
-    
-      publish() {
-        console.log( this.state.topicBox, this.state.payloadBox );
-      }
-
+      };
     
 
-    render(){
-        return (  
-           
-            <TextField id="outlined-basic" label="Trip Cost" variant="outlined" />
-       
-        //     <TextField
-        //     id="outlined-basic"
-        //     label="Trip Cost"
-    
-        //     }}
-            onChange={(e) => setValue(calc.totalPrice(zone, band, cos))}
-          />
-          
-        )
+      render() {
+        return (
+          <React.Fragment>
+            { /* handleChange() is called*/ }
+            <form onSubmit={this.handleChange}>
+            </form>
+            { /* Render output */}
+            <p>Total cost: {this.state.input}</p>
+          </React.Fragment>
+        );
+      }
     }
-}
 
 export default CostDisplay;

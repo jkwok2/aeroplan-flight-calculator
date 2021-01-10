@@ -6,8 +6,10 @@ class DistanceDisplay extends Component {
   
 
     render(){
-        return (  // every component needs a render
+        return (  
+            //placeholder - not necessary
             <TextField id="outlined-basic" label="Distance to location" variant="outlined" />
+
         )
     }
 }

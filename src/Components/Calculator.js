@@ -270,6 +270,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return SASA[band].first
             }
+            // add default - error
+            //also need breaks
     }
 }
 
