@@ -23,6 +23,6 @@ class ClassDropdown extends Component {
         );
       }
     }
-}
+
 
 export default ClassDropdown;
