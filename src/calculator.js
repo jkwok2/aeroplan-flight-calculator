@@ -59,8 +59,3 @@ distInArray(cityArr);
 console.log(cityArr)
 console.log(distances)
 console.log(totalDistance(distances)) // DISPLAY THIS
-
-
-
-
-
