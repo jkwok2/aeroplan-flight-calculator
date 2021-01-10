@@ -25,7 +25,7 @@ class CostDisplay extends Component {
     
 
     render(){
-        return (  // every component needs a render
+        return (  
            
             <TextField id="outlined-basic" label="Trip Cost" variant="outlined" />
        
@@ -34,8 +34,8 @@ class CostDisplay extends Component {
         //     label="Trip Cost"
     
         //     }}
-        //     onChange={(e) => setValue(calc.totalPrice(zone, band, cos))}
-        //   />
+            onChange={(e) => setValue(calc.totalPrice(zone, band, cos))}
+          />
           
         )
     }
