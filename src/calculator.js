@@ -6,7 +6,6 @@ let cos = "j" // from form
 let cityArr = [];
 let distances = [];
 
-
 const splitString = (inputString) => {
     cityArr = inputString.split("-");
 }
@@ -19,8 +18,6 @@ const calculateDistance = (origLong, origLat, destLong, destLat) => {
 
     let distLat = toRadians(destLat - origLat);    
     let distLong = toRadians(destLong - origLong);
-    let originLat = toRadians(origLat);
-    let destinationLat = toRadians(destLat);
 
     let sin2Lat = Math.sin(distLat / 2) * Math.sin(distLat / 2);
     let sin2Long = Math.sin(distLong / 2) * Math.sin(distLong / 2);
@@ -29,7 +26,7 @@ const calculateDistance = (origLong, origLat, destLong, destLat) => {
 
     let b = sin2Lat + (sin2Long * cosOLat * cosdLat);
     let c = 2 * Math.asin(Math.sqrt(b));
-    return earthRadiusMiles * c;
+    return Math.round(earthRadiusMiles * c);
 }
 
 // helper function to convert degrees to radians
@@ -47,24 +44,22 @@ const totalDistance = (distances) => {
 }
 
 
-// const distInArray = (cityArr) => {
-//     for (let i = 0; i < cityArr.length; i++) {
-//         distances.push(calculateDistance(airportData[cityArr[i]].long, airportData[cityArr[i]].lat, 
-//             airportData[cityArr[i+1]].long, airportData[cityArr[i+1]].lat));       
-//     }
-// }
+const distInArray = (cityArr) => {
+    for (let i = 0; i < cityArr.length - 1; i++) {
+        distances.push(calculateDistance(airportData[cityArr[i]].long, airportData[cityArr[i]].lat, airportData[cityArr[i+1]].long, airportData[cityArr[i+1]].lat));       
+    }
+}
 
-// distInArray(cityArr);
+distInArray(cityArr);
 
 // yvr-yyz-zrh
 // [yvr, yyz, zrh]
-// [2000, 3000]
+// [2079, 4033]
 // [5000]
 
 console.log(cityArr)
-console.log(calculateDistance(airportData[cityArr[0]].long, airportData[cityArr[0]].lat, airportData[cityArr[1]].long, airportData[cityArr[1]].lat))
-// console.log(distances)
-// console.log(airportData[cityArr[0]].long);
+console.log(distances)
+console.log(totalDistance(distances)) // DISPLAY THIS
 
 
 
