@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import earth from './earth.webp';
 import './App.css';
+import CostDisplay from './Components/CostDisplay'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={earth} className="App-logo" alt="earth" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to our Flight Reward Calculator !!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Happy
-        </a>
+        
+        
       </header>
+      <p>Accurately check the total points necessary to travel to your dream location</p>
+      <CostDisplay></CostDisplay>
     </div>
+
   );
 }
 
