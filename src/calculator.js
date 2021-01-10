@@ -101,7 +101,7 @@ const distToBand = (zone, dist) => {
     switch (zone) {
         case "ATAT":
             if (0 <= dist && dist <= 1000) {
-                return "band1"
+                return "band1";
             } else if (1001 <= dist && dist <= 2000) {
                 return "band2"
             } else if (2001 <= dist && dist <= 4000) {
@@ -111,6 +111,7 @@ const distToBand = (zone, dist) => {
             } else if (6001 <= dist) {
                 return "band5"
             } 
+            break;
         case "ATPA":
             if (0 <= dist && dist <= 5000) {
                 return "band1"
@@ -119,12 +120,14 @@ const distToBand = (zone, dist) => {
             } else if (7001 <= dist) {
                 return "band3"
             }
+            break;
         case "ATSA":
             if (0 <= dist && dist <= 7000) {
                 return "band1"
             } else if (7001 <= dist) {
                 return "band2"
             }
+            break;
         case "NAAT":
             if (0 <= dist && dist <= 4000) {
                 return "band1"
@@ -135,6 +138,7 @@ const distToBand = (zone, dist) => {
             } else if (8001 <= dist){
                 return "band4";
             }
+            break;
         case "NANA":
             if (0 <= dist && dist <= 500) {
                 return "band1";
@@ -146,6 +150,7 @@ const distToBand = (zone, dist) => {
             } else if (2751 <= dist) {
                 return "band4";
             }
+            break;
         case "NAPA":
             if (0 <= dist && dist <= 5000) {
                 return "band1";
@@ -156,6 +161,7 @@ const distToBand = (zone, dist) => {
             } else if (11001 <= dist) {
                 return "band4";
             }
+            break;
 
         case "NASA":
             if (0 <= dist && dist <= 4500) {
@@ -163,6 +169,7 @@ const distToBand = (zone, dist) => {
             } else if (4501 <= dist) {
                 return "band2";
             }
+            break;
         
         case "PAPA":
             if (0 <= dist && dist <= 1000) {
@@ -176,15 +183,18 @@ const distToBand = (zone, dist) => {
             } else if (7000 <= dist) {
                 return "band5"
             } 
+            break;
+            
         case "PASA":
             if (0 <= dist && dist <= 11000) {
                 return "band1"
             } else if (11000 <= dist) {
                 return "band2"
             }
-        case "SASA":
-            return "band1"
+            break;
         
+        case "SASA":
+            return "band1";
     }
 }
 
@@ -198,6 +208,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return ATAT[band].first
             }
+            break;
+
         case "ATPA":
             if (cos === "e") {
                 return ATAT[band].economy
@@ -206,6 +218,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return ATAT[band].first
             }
+            break;
+
         case "ATSA":
             if (cos === "e") {
                 return ASAS[band].economy
@@ -214,6 +228,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return ASAS[band].first
             }
+            break;
+
         case "NAAT":
             if (cos === "e") {
                 return NAAT[band].economy
@@ -222,6 +238,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return NAAT[band].first
             }
+            break;
+
         case "NANA":
             if (cos === "e") {
                 return NANA[band].economy
@@ -230,6 +248,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return NANA[band].first
             }
+            break;
+
         case "NAPA":
             if (cos === "e") {
                 return NAPA[band].economy
@@ -238,6 +258,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return NAPA[band].first
             }
+            break;
+
         case "NASA":
             if (cos === "e") {
                 return NASA[band].economy
@@ -245,7 +267,9 @@ const totalPrice = (zone, band, cos) => {
                 return NASA[band].business
             } else if (cos == "f") {
                 return NASA[band].first
-            }        
+            }   
+            break;
+
         case "PAPA":
             if (cos === "e") {
                 return PAPA[band].economy
@@ -254,6 +278,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return PAPA[band].first
             }
+            break;
+
         case "PASA":
             if (cos === "e") {
                 return PASA[band].economy
@@ -262,6 +288,8 @@ const totalPrice = (zone, band, cos) => {
             } else if (cos == "f") {
                 return PASA[band].first
             }
+            break;
+
         case "SASA":
             if (cos === "e") {
                 return SASA[band].economy
