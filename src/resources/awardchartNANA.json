@@ -1,0 +1,14 @@
+{
+    "band1": {
+        "economy": 6000, "business": 15000
+    },
+    "band2": {
+        "economy": 10000, "business": 20000
+    },
+    "band3": {
+        "economy": 12500, "business": 25000
+    },
+    "band4": {
+        "economy": 22500, "business": 35000
+    }
+}
