@@ -3,15 +3,26 @@ import TextField from '@material-ui/core/TextField';
 
 class ClassDropdown extends Component {
   
-
-    render(){
-        return (  // every component needs a render
-           
-            <TextField id="outlined-basic" label="Economy/Business dropdown" variant="outlined" />
-       
-            
-    
-        )
+    constructor(props) {
+        super(props);
+      
+      }
+   
+      render() {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Flight Class  
+              <select>          
+                <option value="lime">Economy</option>
+                <option value="coconut">Business</option>
+                <option value="mango">First</option>
+              </select>
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        );
+      }
     }
 }
 

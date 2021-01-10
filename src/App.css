@@ -1,8 +1,8 @@
 .App {
   text-align: center;
-  background-color: #c9e8df;
+  background-color: #bdd3fa;
   width: auto;
-  height: 2000px;
+  height: 1000px;
 }
 
 .App-logo {
@@ -18,7 +18,7 @@
 
 .App-header {
   background-color: #ffffff;
-  min-height: 30vh;
+  min-height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,27 @@
 .grid-table {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
+}
+
+.grid-image {
+  justify-self: center;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grid-adjusted {
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.grid-map {
+  padding: 4%;
 }
 
 @keyframes App-logo-spin {

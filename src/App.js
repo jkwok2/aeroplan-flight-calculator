@@ -19,10 +19,8 @@ function App() {
       <header className="App-header">
         <img src={earth} className="App-logo" alt="earth" />
         <p>
-          Welcome to our Flight Reward Calculator !!
+          Welcome to our Flight Rewards Calculator !!
         </p>
-        
-        
       </header>
       
       <div class="grid-table">
@@ -34,27 +32,26 @@ function App() {
           <ResetButton></ResetButton>
           </div>
 
-          <div>
+          <div class="grid-adjusted">
             <ClassDropdown></ClassDropdown>
             </div>
 
-    <div>
-    <CostDisplay></CostDisplay>
-    </div>
+            <div class="grid-adjusted">
+            <CostDisplay></CostDisplay>
+            </div>
 
-    <div>
-      <InputTextField></InputTextField>
-      </div>
+             <div class="grid-adjusted">
+              <InputTextField></InputTextField>
+              </div>
 
-      <div>
-      <DistanceDisplay></DistanceDisplay>
-      </div>
-      </div>
+              <div class="grid-adjusted">
+            <DistanceDisplay></DistanceDisplay>
+              </div>
+                </div>
       
-
-      <div>
-      <Map></Map>
-      </div>
+                <div class ="grid-map">
+                  <Map></Map>
+                </div>
 
     </div>
 

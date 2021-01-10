@@ -1,12 +1,20 @@
 import React, {Component} from 'react'
-import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class ResetButton extends Component {
   
 
     render(){
         return (  // every component needs a render
-            <TextField id="outlined-basic" label="Reset Button" variant="outlined" />
+            // HTML version:
+        //     <form onSubmit={this.handleSubmit}>
+        //     <input type="submit" value="Reset Values" />
+        //   </form>
+
+        // React version
+        <Button variant="contained" color="primary">
+                Reset
+            </Button>
         )
     }
 }
