@@ -278,15 +278,6 @@ const totalPrice = (zone, band, cos) => {
 // [2079, 4033]
 // [5000]
 
-// let testinputString = "YVR-YYZ-ZRH";
-// let testCityArr = []
-// distInArray(cityArr);
-// splitString(testinputString)
-// distInArray(testCityArr);
-// console.log(testcityArr)
-// console.log(distances)
-// console.log(totalDistance(distances))
-
 splitString(inputString)
 console.log(cityArr)
 distInArray(cityArr)
