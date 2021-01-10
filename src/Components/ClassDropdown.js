@@ -12,7 +12,7 @@ class ClassDropdown extends Component {
         return (
           <form onSubmit={this.handleSubmit}>
             <label>
-              Flight Class
+              Flight Class  
               <select>          
                 <option value="lime">Economy</option>
                 <option value="coconut">Business</option>
