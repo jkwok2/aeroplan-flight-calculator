@@ -1,10 +1,22 @@
 const airportData = require('./resources/airports.json');
 const countries = require('./resources/countries.json');
+const ATAT = require('./resources/awardchartATAT.json');
+const ATPA = require('./resources/awardchartATPA.json');
+const ATSA = require('./resources/awardchartATSA.json');
+const NAAT = require('./resources/awardchartNAAT.json');
+const NANA = require('./resources/awardchartNANA.json');
+const NAPA = require('./resources/awardchartNAPA.json');
+const NASA = require('./resources/awardchartNASA.json');
+const PAPA = require('./resources/awardchartPAPA.json');
+const PASA = require('./resources/awardchartPASA.json');
+const SASA = require('./resources/awardchartSASA.json');
 
 let inputString = "YVR-YYZ-ZRH"; // from form;
 let cos = "j" // from form
 let cityArr = [];
 let distances = [];
+let originZone; 
+let destZone;
 
 const splitString = (inputString) => {
     cityArr = inputString.split("-");
@@ -51,6 +63,209 @@ const distInArray = (cityArr) => {
 
 distInArray(cityArr);
 
+const calcRegion = (continent) => {
+    if (continent === "North America") {
+        return "NA"
+    } else if (continent === "Europe") {
+        return "AT"
+    } else if (continent === "Africa") {
+        return "AT"
+    } else if (continent === "South America") {
+        return "SA"
+    } else if (continent === "Oceania") {
+        return "PA"
+    } else if (continent === "Asia") {
+        return "PA"
+    } else if (continent === "Atlantic") {
+        return "AT"
+    }
+}
+
+const calcZone = (cityArr) => {
+    let originCountry = airportData[cityArr[0]].location;
+    let destCountry = airportData[cityArr.length].location;
+    let originZone = calcRegion(originCountry);
+    let destZone = calcRegion(destCountry);
+    return originZone + destZone
+}
+
+const distToBand = (zone, dist) => {
+    switch (zone) {
+        case "ATAT":
+            if (0 <= dist && dist <= 1000) {
+                return band1
+            } else if (1001 <= dist && dist <= 2000) {
+                return band2
+            } else if (2001 <= dist && dist <= 4000) {
+                return band3
+            } else if (4001 <= dist && dist <= 6000) {
+                return band4
+            } else if (6001 <= dist) {
+                return band5
+            } 
+        case "ATPA":
+            if (0 <= dist && dist <= 5000) {
+                return band1
+            } else if (5001 <= dist && dist <= 7000) {
+                return band2
+            } else if (7001 <= dist) {
+                return band3
+            }
+        case "ATSA":
+            if (0 <= dist && dist <= 7000) {
+                return band1
+            } else if (7001 <= dist) {
+                return band2
+            }
+        case "NAAT":
+            if (0 <= dist && dist <= 4000) {
+                return band1
+            } else if (4001 <= dist && dist <= 6000) {
+                return band2
+            } else if (6001 <= dist && dist <= 8000) {
+                return band3;
+            } else if (8001 <= dist){
+                return band4;
+            }
+        case "NANA":
+            if (0 <= dist && dist <= 500) {
+                return band1;
+            } else if (501 <= dist && dist <= 1500){
+                return band2;
+            } else if (1501 <= dist && dist <= 2750) {
+                return band3;
+        
+            } else if (2751 <= dist) {
+                return band4;
+            }
+        case "NAPA":
+            if (0 <= dist && dist <= 5000) {
+                return band1;
+            } else if (5001 <= dist && dist <= 7500) {
+                return band2;
+            } else if (7501 <= dist && dist <= 11000) {
+                return band3;
+            } else if (11001 <= dist) {
+                return band4;
+            }
+
+        case "NASA":
+            if (0 <= dist && dist <= 4500) {
+                return band1;
+            } else if (4501 <= dist) {
+                return band2;
+            }
+        
+        case "PAPA":
+            if (0 <= dist && dist <= 1000) {
+                return band1
+            } else if (1001 <= dist && dist <= 2000) {
+                return band2
+            } else if (2001 <= dist && dist <= 5000) {
+                return band3
+            } else if (5001 <= dist && dist <= 7000) {
+                return band4
+            } else if (7000 <= dist) {
+                return band5
+            } 
+        case "PASA":
+            if (0 <= dist && dist <= 11000) {
+                return band1
+            } else if (11000 <= dist) {
+                return band2
+            }
+        case "SASA":
+            return band1
+        
+    }
+}
+
+
+const totalPrice = (zone, band, cos) => {
+    switch (zone) {
+        case "ATAT":
+            if (cos === e) {
+                return ATAT[band].economy
+            } else if (cos == j) {
+                return ATAT[band].business
+            } else if (cos == f) {
+                return ATAT[band].first
+            }
+        case "ATPA":
+            if (cos === e) {
+                return ATAT[band].economy
+            } else if (cos == j) {
+                return ATAT[band].business
+            } else if (cos == f) {
+                return ATAT[band].first
+            }
+        case "ATSA":
+            if (cos === e) {
+                return ASAS[band].economy
+            } else if (cos == j) {
+                return ASAS[band].business
+            } else if (cos == f) {
+                return ASAS[band].first
+            }
+        case "NAAT":
+            if (cos === e) {
+                return NAAT[band].economy
+            } else if (cos == j) {
+                return NAAT[band].business
+            } else if (cos == f) {
+                return NAAT[band].first
+            }
+        case "NANA":
+            if (cos === e) {
+                return NANA[band].economy
+            } else if (cos == j) {
+                return NANA[band].business
+            } else if (cos == f) {
+                return NANA[band].first
+            }
+        case "NAPA":
+            if (cos === e) {
+                return NAPA[band].economy
+            } else if (cos == j) {
+                return NAPA[band].business
+            } else if (cos == f) {
+                return NAPA[band].first
+            }
+        case "NASA":
+            if (cos === e) {
+                return NASA[band].economy
+            } else if (cos == j) {
+                return NASA[band].business
+            } else if (cos == f) {
+                return NASA[band].first
+            }        
+        case "PAPA":
+            if (cos === e) {
+                return PAPA[band].economy
+            } else if (cos == j) {
+                return PAPA[band].business
+            } else if (cos == f) {
+                return PAPA[band].first
+            }
+        case "PASA":
+            if (cos === e) {
+                return PASA[band].economy
+            } else if (cos == j) {
+                return PASA[band].business
+            } else if (cos == f) {
+                return PASA[band].first
+            }
+        case "SASA":
+            if (cos === e) {
+                return SASA[band].economy
+            } else if (cos == j) {
+                return SASA[band].business
+            } else if (cos == f) {
+                return SASA[band].first
+            }
+        
+}
+
 // yvr-yyz-zrh
 // [yvr, yyz, zrh]
 // [2079, 4033]
@@ -58,4 +273,4 @@ distInArray(cityArr);
 
 console.log(cityArr)
 console.log(distances)
-console.log(totalDistance(distances)) // DISPLAY THIS
+console.log(totalDistance(distances)) // DISPLAY
