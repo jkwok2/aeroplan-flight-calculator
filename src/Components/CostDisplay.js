@@ -4,34 +4,48 @@ import Calculator from './Calculator'
 
 class CostDisplay extends Component {
   
-    constructor () {
+    constructor (props) {
         super();
-        var calc = new Calculator();
-        
-        this.publish = this.publish.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-      }
-    
-
-      handleChange = event => {
-        const value = event.target.value;
-        this.setState({
-          input: calc.totalPrice()
-        });
-      };
-    
-
+        this.state = {
+          data : this.props.dataParentToChild
+        }
+        // instantiate Calculator:
+        // var calc = new Calculator();
+      
       render() {
+
+        const {data} = this.state;
+
         return (
-          <React.Fragment>
-            { /* handleChange() is called*/ }
-            <form onSubmit={this.handleChange}>
-            </form>
-            { /* Render output */}
-            <p>Total cost: {this.state.input}</p>
-          </React.Fragment>
+
+          <div>
+            {data}
+          </div>
+
+          // Code from tutorial on outputting text from a textfield
+          // <React.Fragment>
+          //   { /* handleChange() is called*/ }
+          //   <form onSubmit={this.handleChange}>
+          //   </form>
+          //   { /* Render output */}
+          //   <p>Total cost: {this.state.input}</p>
+          // </React.Fragment>
         );
       }
     }
 
 export default CostDisplay;
+
+
+     // Code from tutorial on outputting text from a textfield
+        // this.publish = this.publish.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+      }
+    
+      // Code from tutorial on outputting text from a textfield
+      // handleChange = event => {
+      //   const value = event.target.value;
+      //   this.setState({
+      //     input: calc.totalPrice()
+      //   });
+      // };

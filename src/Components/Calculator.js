@@ -12,23 +12,28 @@ const PASA = require('../resources/awardchartPASA.json');
 const SASA = require('../resources/awardchartSASA.json');
 
 class Calculator {
-    constructor (inputString, cos) {
-        this.inputString = inputString
-        this.cos = cos
+
+    // previous constructor at bottom of file
+    constructor (cityArr) {
+        // this.inputString = inputString
+        // this.cos = cos
         this.cityArr = []
         this.distances = []
         this.originZone;
         this.destZone;
-
     }
-}
 
-let inputString = "YVR-YYZ-ZRH"; // from form;
-let cos = "j" // from form
-let cityArr = [];
-let distances = [];
-let originZone; 
-let destZone;
+//Imo commenting these out, these should be covered by the constructor?
+// let inputString = "YVR-YYZ-ZRH"; // from form;
+// let cos = "j" // from form
+// let cityArr = [];
+// let distances = [];
+// let originZone; 
+// let destZone;
+
+// inputs from user
+var inputString = window.prompt("Enter airport codes");
+var cos = window.prompt("Enter cos");  // does not appear to be used in this file
 
 const splitString = (inputString) => {
     cityArr = inputString.split("-");
@@ -275,20 +280,35 @@ const totalPrice = (zone, band, cos) => {
     }
 }
 
+}
+
+
+// testing:
+
 // yvr-yyz-zrh
 // [yvr, yyz, zrh]
 // [2079, 4033]
 // [5000]
 
-splitString(inputString)
-console.log(cityArr)
-distInArray(cityArr)
-console.log(distances)
-testTotalDistance = totalDistance(distances)
-console.log(testTotalDistance)
-var testZone = calcZone(cityArr)
-console.log(testZone)
-var testBand = distToBand(testZone, testTotalDistance)
-console.log(testBand)
-var testTotalPrice = totalPrice(testZone, testBand, "j")
-console.log(testTotalPrice)
+// splitString(inputString)
+// console.log(cityArr)
+// distInArray(cityArr)
+// console.log(distances)
+// testTotalDistance = totalDistance(distances)
+// console.log(testTotalDistance)
+// var testZone = calcZone(cityArr)
+// console.log(testZone)
+// var testBand = distToBand(testZone, testTotalDistance)
+// console.log(testBand)
+// var testTotalPrice = totalPrice(testZone, testBand, "j")
+// console.log(testTotalPrice)
+
+   // previous constructor
+    // constructor (inputString, cos) {
+        // this.inputString = inputString
+        // this.cos = cos
+        // this.cityArr = []
+        // this.distances = []
+        // this.originZone;
+        // this.destZone;
+    // }
